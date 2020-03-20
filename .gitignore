@@ -3,3 +3,11 @@
 /dubbo-provider/dubbo-provider-service/target/
 /server1/target/
 /server2/target/
+/*.iml
+/.idea
+/server1/server1.iml
+/server2/server2.iml
+/dubbo-provider/dubbo-provider.iml
+/dubbo-provider/dubbo-provider-service/dubbo-provider-service.iml
+/dependencies/dependencies.iml
+/dubbo-provider/dubbo-provider-api/dubbo-provider-api.iml
