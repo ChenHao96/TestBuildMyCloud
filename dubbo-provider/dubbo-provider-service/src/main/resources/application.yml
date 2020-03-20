@@ -2,7 +2,7 @@ spring:
   application:
     name: dubbo-provider-service
   main:
-    allow-bean-difinition-overriding: true
+    allow-bean-definition-overriding: true
 
 dubbo:
   scan:
