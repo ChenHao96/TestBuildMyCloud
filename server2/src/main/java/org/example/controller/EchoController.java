@@ -13,13 +13,11 @@ public class EchoController {
     private EchoService echoService;
 
     @GetMapping("/echo/{str}")
-//    @SentinelResource("echo_")
     public String echo(@PathVariable String str) {
         return "Hello " + str;
     }
 
     @GetMapping("/dubbo/echo/{str}")
-//    @SentinelResource("dubbo_echo_")
     public String dubboEcho(@PathVariable String str) {
         return echoService.echoHello(str);
     }

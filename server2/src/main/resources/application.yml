@@ -24,9 +24,6 @@ dubbo:
     parameters:
       namespace: e182f1bf-90ad-4817-88c8-1278e50d41b0
     address: nacos://local-server:8848
-  cloud:
-    #订阅服务提供者
-    subscribed-services: dubbo-provider-service
   consumer:
     #启动前不检查服务是否可用
     check: false
