@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: server-1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: local-server:8848
+        namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
+feign:
+  sentinel:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

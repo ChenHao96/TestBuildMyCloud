@@ -1,0 +1,5 @@
+# Project exclude paths
+/dubbo-provider/dubbo-provider-api/target/
+/dubbo-provider/dubbo-provider-service/target/
+/server1/target/
+/server2/target/

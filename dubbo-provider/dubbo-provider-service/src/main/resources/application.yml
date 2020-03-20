@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: dubbo-provider-service
+  main:
+    allow-bean-difinition-overriding: true
+
+dubbo:
+  scan:
+    base-packages: org.example.dubbo.service
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: kryo
+  registry:
+    parameters:
+      namespace: e182f1bf-90ad-4817-88c8-1278e50d41b0
+    address: nacos://local-server:8848
