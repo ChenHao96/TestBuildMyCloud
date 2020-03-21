@@ -17,3 +17,6 @@
 /seata-spring-cloud/business-provider-account-service/business-provider-account-service.iml
 /seata-spring-cloud/business-provider-storage-service/business-provider-storage-service.iml
 /seata-spring-cloud/business-provider-order-service/business-provider-order-service.iml
+/seata-spring-cloud/business-provider-api/target/
+/seata-spring-cloud/business-provider-account-service/target/
+/seata-spring-cloud/business-server/target/

@@ -6,6 +6,7 @@ import org.apache.dubbo.config.annotation.Service;
 public class StorageServiceImpl implements StorageService {
     @Override
     public boolean deduct(String commodityCode, int count) {
+        //TODO:
         return false;
     }
 }
