@@ -1,0 +1,91 @@
+server:
+  port: 8080
+
+nacos:
+  server-addr: local-server
+  port: 8848
+  namespace:
+    server: dc2615b9-2358-4cd8-baa7-ba152891a673
+    seata: d0a9a497-dbc8-4884-b3b9-9a1a8d484ecd
+    dubbo: e182f1bf-90ad-4817-88c8-1278e50d41b0
+
+logging:
+  level:
+    io:
+      seata: debug
+
+service:
+  dubbo:
+    version:
+      order: 0.0.1
+      storage: 0.0.1
+
+spring:
+  application:
+    name: business-service
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: business-service
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}:${nacos.port}
+        namespace: ${nacos.namespace.server}
+
+seata:
+  enabled: true
+  service:
+    grouplist:
+      default: local-server:8091
+    disable-global-transaction: false
+    vgroup-mapping:
+      business-service: default
+  transport:
+    serialization: kryo
+  config:
+    type: nacos
+    nacos:
+      server-addr: ${nacos.server-addr}:${nacos.port}
+      namespace: ${nacos.namespace.seata}
+  registry:
+    type: nacos
+    nacos:
+      cluster: default
+      server-addr: ${nacos.server-addr}:${nacos.port}
+      namespace: ${nacos.namespace.seata}
+  client:
+    tm:
+      commit:
+        retry:
+          count: 5
+      rollback:
+        retry:
+          count: 5
+
+dubbo:
+  protocol:
+    port: -1
+    name: dubbo
+    serialization: kryo
+  registry:
+    parameters:
+      namespace: ${nacos.namespace.dubbo}
+    address: nacos://${nacos.server-addr}:${nacos.port}
+  consumer:
+    check: false
+
+management:
+  health:
+    dubbo:
+      status:
+        extras: load,threadpool
+        defaults: registry,memory,load
+  endpoint:
+    dubbo:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"

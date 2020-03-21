@@ -11,3 +11,6 @@
 /dubbo-provider/dubbo-provider-service/dubbo-provider-service.iml
 /dependencies/dependencies.iml
 /dubbo-provider/dubbo-provider-api/dubbo-provider-api.iml
+/SeataProject/business-provider-api/business-provider-api.iml
+/seata-spring-cloud/business-provider-api/business-provider-api.iml
+/seata-spring-cloud/business-server/business-server.iml

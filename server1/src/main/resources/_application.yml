@@ -5,9 +5,9 @@ spring:
   application:
     name: server-1
   cloud:
-    sentinel:
-      transport:
-        dashboard: local-server:8080
+    #    sentinel:
+    #      transport:
+    #        dashboard: local-server:8080
     nacos:
       discovery:
         server-addr: local-server:8848
