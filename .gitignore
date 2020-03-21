@@ -1,16 +1,16 @@
 # Project exclude paths
-/dubbo-provider/dubbo-provider-api/target/
-/dubbo-provider/dubbo-provider-service/target/
-/server1/target/
-/server2/target/
-/*.iml
 /.idea
+/TestBuildMyCloud.iml
+/dependencies/dependencies.iml
+/server1/target/
 /server1/server1.iml
+/server2/target/
 /server2/server2.iml
 /dubbo-provider/dubbo-provider.iml
-/dubbo-provider/dubbo-provider-service/dubbo-provider-service.iml
-/dependencies/dependencies.iml
 /dubbo-provider/dubbo-provider-api/dubbo-provider-api.iml
+/dubbo-provider/dubbo-provider-service/dubbo-provider-service.iml
+/dubbo-provider/dubbo-provider-api/target/
+/dubbo-provider/dubbo-provider-service/target/
 /seata-spring-cloud/seata-spring-cloud.iml
 /seata-spring-cloud/business-provider-api/business-provider-api.iml
 /seata-spring-cloud/business-server/business-server.iml
@@ -20,3 +20,4 @@
 /seata-spring-cloud/business-provider-api/target/
 /seata-spring-cloud/business-provider-account-service/target/
 /seata-spring-cloud/business-server/target/
+
