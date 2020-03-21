@@ -9,11 +9,22 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>SeataProject</artifactId>
+    <artifactId>seata-spring-cloud</artifactId>
     <packaging>pom</packaging>
 
     <modules>
         <module>business-server</module>
         <module>business-provider-api</module>
+        <module>business-provider-account-service</module>
+        <module>business-provider-order-service</module>
+        <module>business-provider-storage-service</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 </project>

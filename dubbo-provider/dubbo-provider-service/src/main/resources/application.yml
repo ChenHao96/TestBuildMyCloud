@@ -14,4 +14,4 @@ dubbo:
   registry:
     parameters:
       namespace: e182f1bf-90ad-4817-88c8-1278e50d41b0
-    address: nacos://local-server:8848
+    address: nacos://localhost:8848

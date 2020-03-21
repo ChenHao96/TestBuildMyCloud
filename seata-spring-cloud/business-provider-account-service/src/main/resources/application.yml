@@ -1,0 +1,35 @@
+service:
+  dubbo:
+    version:
+      account: 0.0.1
+
+spring:
+  application:
+    name: dubbo-service-application-accountService
+  main:
+    allow-bean-definition-overriding: true
+  # DataSource Config
+  datasource:
+    platform: mysql
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/accounts
+    username: service_account
+    password: 123456
+
+mybatis-plus:
+#  typeEnumsPackage: org.example.business.model.enums
+  configuration:
+    map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+dubbo:
+  scan:
+    base-packages: org.example.business.service
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: kryo
+  registry:
+    parameters:
+      namespace: e182f1bf-90ad-4817-88c8-1278e50d41b0
+    address: nacos://localhost:8848

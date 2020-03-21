@@ -1,4 +1,4 @@
-package org.example.business;
+package org.example.business.service;
 
 public interface AccountService {
 
@@ -10,5 +10,5 @@ public interface AccountService {
     /**
      * 从用户账户中借出
      */
-    void debit(String userId, int money);
+    boolean debit(String userId, int money);
 }

@@ -1,4 +1,4 @@
-package org.example.business;
+package org.example.business.service;
 
 import org.example.business.model.Order;
 

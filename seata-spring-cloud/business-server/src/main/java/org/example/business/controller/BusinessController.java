@@ -16,7 +16,7 @@ public class BusinessController {
     @PostMapping("/purchase")
     public HttpResult<String> purchase(String userId, String commodityCode, int orderCount) {
         ServiceResult<String> serviceResult = purchaseService.purchase(userId, commodityCode, orderCount);
-        if (serviceResult != null && serviceResult.getCode() == 0) {
+        if (serviceResult != null && serviceResult.isSuccess()) {
             return new HttpResult<>(200, "SUCCESS", serviceResult.getData());
         }
         return new HttpResult<>(500, "采购失败，请稍后再试");

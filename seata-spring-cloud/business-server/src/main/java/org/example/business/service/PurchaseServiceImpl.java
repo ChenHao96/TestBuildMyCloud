@@ -5,8 +5,6 @@ import io.seata.spring.annotation.GlobalTransactional;
 import io.seata.tm.api.GlobalTransactionContext;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
-import org.example.business.OrderService;
-import org.example.business.StorageService;
 import org.example.business.model.Order;
 import org.example.business.model.ServiceResult;
 import org.springframework.stereotype.Service;
