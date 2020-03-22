@@ -18,6 +18,7 @@ service:
     version:
       order: 0.0.1
       storage: 0.0.1
+      account: 0.0.1
 
 spring:
   application:

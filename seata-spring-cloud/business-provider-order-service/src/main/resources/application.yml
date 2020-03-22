@@ -1,6 +1,7 @@
 service:
   dubbo:
     version:
+      storage: 0.0.1
       order: 0.0.1
 
 spring:
@@ -33,3 +34,5 @@ dubbo:
     parameters:
       namespace: e182f1bf-90ad-4817-88c8-1278e50d41b0
     address: nacos://localhost:8848
+  consumer:
+    check: false

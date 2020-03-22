@@ -4,6 +4,7 @@ import org.apache.dubbo.config.annotation.Service;
 import org.example.business.adaptor.AccountAdaptor;
 import org.example.business.model.Account;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 
 @Service(version = "${service.dubbo.version.account}")
 public class AccountServiceImpl implements AccountService {
@@ -13,8 +14,10 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public boolean debit(String userId, int money) {
+        if (StringUtils.isEmpty(userId) || money < 0) return false;
         Account account = accountAdaptor.queryAccountById(userId);
         if (account == null || account.getMoney() < money) return false;
+        if (money == 0) return true;
         //TODO:need Account to do something...
         return accountAdaptor.updateUserBalance(userId, money) == 1;
     }

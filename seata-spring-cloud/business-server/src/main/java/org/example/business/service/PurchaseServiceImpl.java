@@ -19,6 +19,9 @@ public class PurchaseServiceImpl implements PurchaseService {
     @Reference(version = "${service.dubbo.version.order}")
     private OrderService orderService;
 
+    @Reference(version = "${service.dubbo.version.account}")
+    private AccountService accountService;
+
     @Override
     @GlobalTransactional
     public ServiceResult<String> purchase(String userId, String commodityCode, int orderCount) {
@@ -27,16 +30,21 @@ public class PurchaseServiceImpl implements PurchaseService {
         if (deduct) {
             serviceResult.setMsg("创建订单失败!");
             Order order = orderService.create(userId, commodityCode, orderCount);
-            if (order == null) {
-                try {
-                    GlobalTransactionContext.getCurrentOrCreate().rollback();
-                } catch (TransactionException e) {
-                    log.warn("手动回滚失败!", e);
+            if (order != null) {
+                serviceResult.setMsg("账户余额不足!");
+                if (accountService.debit(userId, order.getTotalMoney())) {
+                    serviceResult.setSuccess(true);
+                    serviceResult.setMsg("SUCCESS");
                 }
-                serviceResult.setMsg("购买商品失败!");
             }
-            serviceResult.setSuccess(true);
-            serviceResult.setMsg("SUCCESS");
+        }
+
+        if (!serviceResult.isSuccess()) {
+            try {
+                GlobalTransactionContext.getCurrentOrCreate().rollback();
+            } catch (TransactionException e) {
+                log.warn("手动回滚失败!", e);
+            }
         }
         return serviceResult;
     }

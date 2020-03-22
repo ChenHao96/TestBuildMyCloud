@@ -14,7 +14,6 @@
         <dubbo.version>2.7.5</dubbo.version>
         <dubbo.kryo.version>2.6.8</dubbo.kryo.version>
 
-        <mysql.version>5.1.37</mysql.version>
         <druid.version>1.1.21</druid.version>
         <mybatis.version>2.1.1</mybatis.version>
         <redisson.version>3.12.1</redisson.version>

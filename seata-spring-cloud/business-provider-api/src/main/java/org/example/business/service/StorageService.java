@@ -11,4 +11,9 @@ public interface StorageService {
      * 扣除存储数量
      */
     boolean deduct(String commodityCode, int count);
+
+    /**
+     * 查询商品价格
+     */
+    Integer queryCommodityMoney(String commodityCode);
 }
