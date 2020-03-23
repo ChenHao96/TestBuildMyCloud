@@ -20,4 +20,5 @@
 /seata-spring-cloud/business-provider-api/target/
 /seata-spring-cloud/business-provider-account-service/target/
 /seata-spring-cloud/business-server/target/
-
+/seata-spring-cloud/business-provider-order-service/target/
+/seata-spring-cloud/business-provider-storage-service/target/
