@@ -26,9 +26,6 @@ spring:
   main:
     allow-bean-definition-overriding: true
   cloud:
-    alibaba:
-      seata:
-        tx-service-group: business-service
     nacos:
       discovery:
         server-addr: ${nacos.server-addr}:${nacos.port}
