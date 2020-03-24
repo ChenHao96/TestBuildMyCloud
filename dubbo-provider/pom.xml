@@ -14,6 +14,6 @@
 
     <modules>
         <module>dubbo-provider-api</module>
-        <module>dubbo-provider-service</module>
+<!--        <module>dubbo-provider-service</module>-->
     </modules>
 </project>

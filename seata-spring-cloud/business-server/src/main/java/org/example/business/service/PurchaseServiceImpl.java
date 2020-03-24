@@ -13,13 +13,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class PurchaseServiceImpl implements PurchaseService {
 
-    @Reference(version = "${service.dubbo.version.storage}")
+    @Reference(version = "${service.dubbo.version.storage}", check = false)
     private StorageService storageService;
 
-    @Reference(version = "${service.dubbo.version.order}")
+    @Reference(version = "${service.dubbo.version.order}", check = false)
     private OrderService orderService;
 
-    @Reference(version = "${service.dubbo.version.account}")
+    @Reference(version = "${service.dubbo.version.account}", check = false)
     private AccountService accountService;
 
     @Override

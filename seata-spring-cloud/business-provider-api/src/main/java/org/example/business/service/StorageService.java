@@ -15,5 +15,5 @@ public interface StorageService {
     /**
      * 查询商品价格
      */
-    Integer queryCommodityMoney(String commodityCode);
+    int queryCommodityMoney(String commodityCode);
 }

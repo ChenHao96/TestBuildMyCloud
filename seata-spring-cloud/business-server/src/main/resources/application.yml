@@ -1,18 +1,6 @@
 server:
   port: 8080
 
-nacos:
-  server-addr: localhost
-  port: 8848
-  namespace:
-    server: dc2615b9-2358-4cd8-baa7-ba152891a673
-    dubbo: e182f1bf-90ad-4817-88c8-1278e50d41b0
-
-logging:
-  level:
-    io:
-      seata: debug
-
 service:
   dubbo:
     version:
@@ -20,12 +8,34 @@ service:
       storage: 0.0.1
       account: 0.0.1
 
+logging:
+  level:
+    io:
+      seata: debug
+
+seata:
+  enabled: true
+  service:
+    disable-global-transaction: false
+
+nacos:
+  server-addr: localhost
+  port: 8848
+  register:
+    dubbo: nacos://localhost:8848
+  namespace:
+    server: dc2615b9-2358-4cd8-baa7-ba152891a673
+    dubbo: e182f1bf-90ad-4817-88c8-1278e50d41b0
+
 spring:
   application:
     name: business-service
   main:
     allow-bean-definition-overriding: true
   cloud:
+    alibaba:
+      seata:
+        tx-service-group: business-service
     nacos:
       discovery:
         server-addr: ${nacos.server-addr}:${nacos.port}
@@ -33,15 +43,15 @@ spring:
 
 dubbo:
   protocol:
-    port: -1
     name: dubbo
+    port: -1
     serialization: kryo
   registry:
     parameters:
       namespace: ${nacos.namespace.dubbo}
-    address: nacos://${nacos.server-addr}:${nacos.port}
-  consumer:
-    check: false
+    address: ${nacos.register.dubbo}
+  cloud:
+    subscribed-services: dubbo-service-application-storageService,dubbo-service-application-accountService,dubbo-service-application-orderService
 
 management:
   health:

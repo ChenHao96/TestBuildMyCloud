@@ -6,26 +6,28 @@ import org.example.business.adaptor.OrderAdaptor;
 import org.example.business.entity.OrderEntity;
 import org.example.business.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
 import java.util.UUID;
 
+@Component
 @Service(version = "${service.dubbo.version.order}")
 public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderAdaptor orderAdaptor;
 
-    @Reference(version = "${service.dubbo.version.storage}")
+    @Reference(version = "${service.dubbo.version.storage}", check = false)
     private StorageService storageService;
 
     @Override
     public Order create(String userId, String commodityCode, int orderCount) {
 
         if (StringUtils.isEmpty(userId) || StringUtils.isEmpty(commodityCode) || orderCount < 1) return null;
-        Integer money = storageService.queryCommodityMoney(commodityCode);
-        if (money == null) return null;
+        int money = storageService.queryCommodityMoney(commodityCode);
+        if (money < 0) return null;
 
         OrderEntity record = new OrderEntity();
         record.setUserId(userId);

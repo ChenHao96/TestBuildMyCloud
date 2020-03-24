@@ -4,11 +4,38 @@ service:
       storage: 0.0.1
       order: 0.0.1
 
+logging:
+  level:
+    io:
+      seata: debug
+
+seata:
+  enabled: true
+  service:
+    disable-global-transaction: false
+
+nacos:
+  server-addr: localhost
+  port: 8848
+  register:
+    dubbo: nacos://localhost:8848
+  namespace:
+    server: dc2615b9-2358-4cd8-baa7-ba152891a673
+    dubbo: e182f1bf-90ad-4817-88c8-1278e50d41b0
+
 spring:
   application:
     name: dubbo-service-application-orderService
   main:
     allow-bean-definition-overriding: true
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: order-service
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}:${nacos.port}
+        namespace: ${nacos.namespace.server}
   # DataSource Config
   datasource:
     platform: mysql
@@ -32,5 +59,21 @@ dubbo:
     serialization: kryo
   registry:
     parameters:
-      namespace: e182f1bf-90ad-4817-88c8-1278e50d41b0
-    address: nacos://localhost:8848
+      namespace: ${nacos.namespace.dubbo}
+    address: ${nacos.register.dubbo}
+  cloud:
+    subscribed-services: dubbo-service-application-storageService
+
+management:
+  health:
+    dubbo:
+      status:
+        extras: load,threadpool
+        defaults: registry,memory,load
+  endpoint:
+    dubbo:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
