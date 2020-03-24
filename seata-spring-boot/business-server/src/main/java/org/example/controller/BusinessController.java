@@ -1,8 +1,8 @@
-package org.example.business.controller;
+package org.example.controller;
 
-import org.example.business.model.HttpResult;
-import org.example.business.model.ServiceResult;
-import org.example.business.service.PurchaseService;
+import org.example.model.HttpResult;
+import org.example.model.ServiceResult;
+import org.example.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;

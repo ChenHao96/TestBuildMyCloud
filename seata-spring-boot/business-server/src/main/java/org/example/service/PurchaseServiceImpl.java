@@ -1,4 +1,4 @@
-package org.example.business.service;
+package org.example.service;
 
 import io.seata.core.exception.TransactionException;
 import io.seata.spring.annotation.GlobalTransactional;
@@ -6,24 +6,27 @@ import io.seata.tm.api.GlobalTransactionContext;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
 import org.example.business.model.Order;
-import org.example.business.model.ServiceResult;
+import org.example.business.service.AccountService;
+import org.example.business.service.OrderService;
+import org.example.business.service.StorageService;
+import org.example.model.ServiceResult;
 import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
 public class PurchaseServiceImpl implements PurchaseService {
 
-    @Reference(version = "${service.dubbo.version.storage}", check = false)
+    @Reference(version = "${provider.service.version.storage}", check = false)
     private StorageService storageService;
 
-    @Reference(version = "${service.dubbo.version.order}", check = false)
+    @Reference(version = "${provider.service.version.order}", check = false)
     private OrderService orderService;
 
-    @Reference(version = "${service.dubbo.version.account}", check = false)
+    @Reference(version = "${provider.service.version.account}", check = false)
     private AccountService accountService;
 
     @Override
-    @GlobalTransactional(name = "dubbo-gts-seata-example")
+    @GlobalTransactional(timeoutMills = 300000, name = "dubbo-gts-seata-example")
     public ServiceResult<String> purchase(String userId, String commodityCode, int orderCount) {
         ServiceResult<String> serviceResult = new ServiceResult<>(false, "购买商品失败!");
         boolean deduct = storageService.deduct(commodityCode, orderCount);

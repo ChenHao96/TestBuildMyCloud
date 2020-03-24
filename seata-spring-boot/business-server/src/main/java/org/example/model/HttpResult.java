@@ -1,4 +1,4 @@
-package org.example.business.model;
+package org.example.model;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

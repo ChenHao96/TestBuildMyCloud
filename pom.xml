@@ -16,6 +16,7 @@
         <module>dubbo-provider</module>
         <module>dependencies</module>
         <module>seata-spring-cloud</module>
+        <module>seata-spring-boot</module>
     </modules>
 
     <groupId>org.example</groupId>

@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>business-server</module>
         <module>business-provider-api</module>
         <module>business-provider-account-service</module>
         <module>business-provider-order-service</module>

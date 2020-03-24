@@ -1,8 +1,8 @@
-package org.example.business.service.test;
+package org.example.service.test;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.business.model.ServiceResult;
-import org.example.business.service.PurchaseService;
+import org.example.model.ServiceResult;
+import org.example.service.PurchaseService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
