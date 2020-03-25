@@ -11,12 +11,9 @@
     </parent>
 
     <modules>
-        <module>server1</module>
-        <module>server2</module>
-        <module>dubbo-provider</module>
+        <module>server</module>
         <module>dependencies</module>
-        <module>seata-spring-cloud</module>
-        <module>seata-spring-boot</module>
+        <module>seata-dubbo-nacos</module>
     </modules>
 
     <groupId>org.example</groupId>
