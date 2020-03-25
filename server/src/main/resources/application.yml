@@ -6,6 +6,11 @@ spring:
     name: server
   cloud:
     nacos:
+      config:
+        namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
+        group: DEVELOP_GROUP
+        file-extension: yaml
+        server-addr: localhost:8848
       discovery:
         server-addr: localhost:8848
         namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
