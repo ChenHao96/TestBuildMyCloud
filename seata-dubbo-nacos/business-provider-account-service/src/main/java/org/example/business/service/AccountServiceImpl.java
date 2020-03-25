@@ -20,7 +20,6 @@ public class AccountServiceImpl implements AccountService {
         Account account = accountAdaptor.queryAccountById(userId);
         if (account == null || account.getMoney() < money) return false;
         if (money == 0) return true;
-        //TODO:need Account to do something...
         return accountAdaptor.updateUserBalance(userId, money) == 1;
     }
 }
