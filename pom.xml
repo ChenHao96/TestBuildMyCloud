@@ -18,12 +18,13 @@
 
     <groupId>org.example</groupId>
     <artifactId>TestBuildMyCloud</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${reversion}</version>
     <packaging>pom</packaging>
 
     <properties>
         <java.version>1.8</java.version>
         <mysql.version>5.1.37</mysql.version>
+        <reversion>0.0.2</reversion>
     </properties>
 
     <dependencyManagement>
