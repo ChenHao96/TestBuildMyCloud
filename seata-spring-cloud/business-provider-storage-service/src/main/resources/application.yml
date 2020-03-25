@@ -8,11 +8,6 @@ logging:
     io:
       seata: debug
 
-seata:
-  enabled: true
-  service:
-    disable-global-transaction: false
-
 nacos:
   server-addr: localhost
   port: 8848
@@ -24,19 +19,16 @@ nacos:
 
 
 spring:
+  profile: seata
   application:
     name: dubbo-service-application-storageService
   main:
     allow-bean-definition-overriding: true
   cloud:
-    alibaba:
-      seata:
-        tx-service-group: storage-service
     nacos:
       discovery:
         server-addr: ${nacos.server-addr}:${nacos.port}
         namespace: ${nacos.namespace.server}
-  # DataSource Config
   datasource:
     platform: mysql
     driver-class-name: com.mysql.jdbc.Driver
@@ -45,14 +37,10 @@ spring:
     password: 123456
 
 mybatis-plus:
-#  typeEnumsPackage: org.example.business.entity.enums
   configuration:
     map-underscore-to-camel-case: true
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 dubbo:
-  scan:
-    base-packages: org.example.business.service
   protocol:
     name: dubbo
     port: -1
@@ -61,19 +49,3 @@ dubbo:
     parameters:
       namespace: ${nacos.namespace.dubbo}
     address: ${nacos.register.dubbo}
-  cloud:
-    subscribed-services:
-
-management:
-  health:
-    dubbo:
-      status:
-        extras: load,threadpool
-        defaults: registry,memory,load
-  endpoint:
-    dubbo:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: "*"

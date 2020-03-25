@@ -41,7 +41,6 @@ public class PurchaseServiceImpl implements PurchaseService {
                 }
             }
         }
-
         if (!serviceResult.isSuccess()) {
             try {
                 GlobalTransactionContext.getCurrentOrCreate().rollback();

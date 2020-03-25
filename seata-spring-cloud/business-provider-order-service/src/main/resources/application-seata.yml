@@ -1,6 +1,6 @@
 seata:
   enabled: true
-  tx-service-group: business-service
+  tx-service-group: order-service
   client:
     rm-report-success-enable: true
     rm-table-meta-check-enable: false

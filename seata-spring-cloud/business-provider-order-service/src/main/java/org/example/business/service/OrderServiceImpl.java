@@ -35,7 +35,7 @@ public class OrderServiceImpl implements OrderService {
         record.setMoney(money * orderCount);
         record.setCommodityCode(commodityCode);
         int ret = orderAdaptor.insertOrderRecord(record);
-
+        
         if (ret == 1) {
             Order result = new Order();
             result.setCreateTime(new Date());

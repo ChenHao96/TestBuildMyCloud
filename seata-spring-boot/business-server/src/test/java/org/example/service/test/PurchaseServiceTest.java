@@ -20,7 +20,7 @@ public class PurchaseServiceTest {
 
     @Test
     public void testPurchase() {
-        ServiceResult<String> serviceResult = purchaseService.purchase("abc", "123", 10);
+        ServiceResult<String> serviceResult = purchaseService.purchase("abc", "123", 2);
         log.info("result:{}", serviceResult);
         Assert.isTrue(serviceResult.isSuccess(), "购买商品失败!");
     }

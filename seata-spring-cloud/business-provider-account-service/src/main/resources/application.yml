@@ -1,57 +1,43 @@
-service:
-  dubbo:
-    version:
-      account: 0.0.1
-
 logging:
   level:
     io:
       seata: debug
 
-seata:
-  enabled: true
-  service:
-    disable-global-transaction: false
+service:
+  dubbo:
+    version:
+      account: 0.0.1
 
 nacos:
   server-addr: localhost
   port: 8848
-  register:
-    dubbo: nacos://localhost:8848
   namespace:
     server: dc2615b9-2358-4cd8-baa7-ba152891a673
     dubbo: e182f1bf-90ad-4817-88c8-1278e50d41b0
 
 spring:
+  profile: seata
   application:
     name: dubbo-service-application-accountService
   main:
     allow-bean-definition-overriding: true
-  cloud:
-    alibaba:
-      seata:
-        tx-service-group: account-service
-    nacos:
-      discovery:
-        server-addr: ${nacos.server-addr}:${nacos.port}
-        namespace: ${nacos.namespace.server}
-  # DataSource Config
   datasource:
     platform: mysql
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/accounts
     username: service_account
     password: 123456
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}:${nacos.port}
+        namespace: ${nacos.namespace.server}
 
 mybatis-plus:
-#  typeEnumsPackage: org.example.business.model.enums
   configuration:
     map-underscore-to-camel-case: true
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 dubbo:
-  scan:
-    base-packages: org.example.business.service
   protocol:
     name: dubbo
     port: -1
@@ -59,20 +45,4 @@ dubbo:
   registry:
     parameters:
       namespace: ${nacos.namespace.dubbo}
-    address: ${nacos.register.dubbo}
-  cloud:
-    subscribed-services:
-
-management:
-  health:
-    dubbo:
-      status:
-        extras: load,threadpool
-        defaults: registry,memory,load
-  endpoint:
-    dubbo:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+    address: nacos://${nacos.server-addr}:${nacos.port}

@@ -34,7 +34,6 @@ dubbo:
     name: dubbo
     serialization: kryo
   registry:
-    id: dubbo-business-example-registry
     parameters:
       namespace: ${nacos.namespace.dubbo}
     address: nacos://${nacos.server-addr}:${nacos.port}
