@@ -14,7 +14,7 @@
         <module>server</module>
         <module>dependencies</module>
         <module>seata-dubbo-nacos</module>
-        <module>spring-cloud-getway</module>
+        <module>spring-cloud-gateway</module>
     </modules>
 
     <groupId>org.example</groupId>
