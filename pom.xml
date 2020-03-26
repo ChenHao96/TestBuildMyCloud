@@ -17,8 +17,8 @@
     </modules>
 
     <groupId>org.example</groupId>
-    <artifactId>TestBuildMyCloud</artifactId>
     <version>${reversion}</version>
+    <artifactId>TestBuildMyCloud</artifactId>
     <packaging>pom</packaging>
 
     <properties>
