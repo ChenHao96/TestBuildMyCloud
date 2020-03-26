@@ -24,11 +24,6 @@ spring:
     name: dubbo-service-application-orderService
   main:
     allow-bean-definition-overriding: true
-  cloud:
-    nacos:
-      discovery:
-        server-addr: ${nacos.server-addr}:${nacos.port}
-        namespace: ${nacos.namespace.server}
   datasource:
     platform: mysql
     driver-class-name: com.mysql.jdbc.Driver
