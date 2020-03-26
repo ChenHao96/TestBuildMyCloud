@@ -9,3 +9,8 @@
 /seata-dubbo-nacos/business-provider-order-service/business-provider-order-service.iml
 /seata-dubbo-nacos/business-provider-api/business-provider-api.iml
 /seata-dubbo-nacos/business-provider-account-service/business-provider-account-service.iml
+/seata-dubbo-nacos/business-server/target/
+/seata-dubbo-nacos/business-provider-order-service/target/
+/seata-dubbo-nacos/business-provider-account-service/target/
+/seata-dubbo-nacos/business-provider-storage-service/target/
+/seata-dubbo-nacos/business-provider-api/target/
