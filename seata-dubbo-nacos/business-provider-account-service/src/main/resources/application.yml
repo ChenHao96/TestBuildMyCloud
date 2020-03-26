@@ -16,7 +16,8 @@ nacos:
     dubbo: e182f1bf-90ad-4817-88c8-1278e50d41b0
 
 spring:
-  profile: seata
+  profiles:
+    active: seata
   application:
     name: dubbo-service-application-accountService
   main:

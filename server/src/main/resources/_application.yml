@@ -1,9 +1,8 @@
 server:
-  port: 0 #OS自动分配可用的端口，由于在nacos已经注册了，端口的定义就没有意义了
+  #OS自动分配可用的端口，由于在nacos已经注册了，端口的定义就没有意义了
+  port: 0
 
 spring:
-  application:
-    name: server
   cloud:
     nacos:
       discovery:

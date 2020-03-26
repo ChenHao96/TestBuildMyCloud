@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: nacos-discovery-gateway
+  cloud:
+    gateway:
+      discovery:
+        # TODO: nacos 权重没有办法控制路由
+        locator:
+          # 表明gateway开启服务注册和发现的功能，
+          # 并且spring cloud gateway自动根据服务发现为每一个服务创建了一个router
+          # 这个router将以服务名开头的请求路径转发到对应的服务。
+          enabled: true
+          # 是将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了），
+          # 比如以/nacos-discovery-server/**的请求路径被路由转发到服务名为nacos-discovery-server的服务上。
+          lowerCaseServiceId: true
+          filters:
+            - StripPrefix=1
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: dc2615b9-2358-4cd8-baa7-ba152891a673

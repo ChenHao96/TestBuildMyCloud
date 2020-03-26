@@ -19,7 +19,8 @@ nacos:
 
 
 spring:
-  profile: seata
+  profiles:
+    active: seata
   application:
     name: dubbo-service-application-storageService
   main:
