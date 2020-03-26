@@ -1,16 +1,11 @@
 server:
-  port: 8080
+  port: 0 #OS自动分配可用的端口，由于在nacos已经注册了，端口的定义就没有意义了
 
 spring:
   application:
     name: server
   cloud:
     nacos:
-      config:
-        namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
-        group: DEVELOP_GROUP
-        file-extension: yaml
-        server-addr: localhost:8848
       discovery:
         server-addr: localhost:8848
         namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
