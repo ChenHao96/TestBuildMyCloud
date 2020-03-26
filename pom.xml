@@ -13,7 +13,6 @@
     <modules>
         <module>server</module>
         <module>dependencies</module>
-        <module>seata-dubbo-nacos</module>
     </modules>
 
     <groupId>org.example</groupId>
@@ -23,8 +22,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <mysql.version>5.1.37</mysql.version>
-        <reversion>0.0.2</reversion>
+        <reversion>0.0.1</reversion>
     </properties>
 
     <dependencyManagement>
