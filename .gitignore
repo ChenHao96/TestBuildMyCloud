@@ -16,3 +16,4 @@
 /seata-dubbo-nacos/business-provider-api/target/
 /spring-cloud-gateway/spring-cloud-gateway.iml
 /seata-sharding-jdbc/seata-sharding-jdbc.iml
+/seata-sharding-jdbc/target/

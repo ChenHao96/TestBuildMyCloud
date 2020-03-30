@@ -1,0 +1,11 @@
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+
+spring:
+  profiles:
+    active: shardingJdbc
+  application:
+    name: sharding-jdbc-service-application
+  main:
+    allow-bean-definition-overriding: true
