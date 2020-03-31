@@ -1,2 +1,6 @@
 params:
   userName: test
+
+provider:
+  rest:
+    service: server-2
