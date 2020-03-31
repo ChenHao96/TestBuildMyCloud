@@ -1,5 +1,6 @@
 package org.example.business.service;
 
+import io.seata.spring.annotation.GlobalLock;
 import org.apache.dubbo.config.annotation.Service;
 import org.example.business.adaptor.StorageAdaptor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ public class StorageServiceImpl implements StorageService {
     }
 
     @Override
+    @GlobalLock
     public int queryCommodityMoney(String commodityCode) {
         if (StringUtils.isEmpty(commodityCode)) return -1;
         return storageAdaptor.queryCommodityMoney(commodityCode);

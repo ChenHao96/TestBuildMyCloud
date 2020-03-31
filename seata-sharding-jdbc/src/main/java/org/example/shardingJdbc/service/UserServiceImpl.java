@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
     private TUserMapper tUserMapper;
 
     @Override
-    public void addUserRecord(TUser record) {
-        tUserMapper.insert(record);
+    public boolean addUserRecord(TUser record) {
+        return tUserMapper.insert(record) == 1;
     }
 }

@@ -31,14 +31,18 @@ seata:
     vgroup-mapping:
       sharding-jdbc-service-group: default
     enable-degrade: false
+    disable-global-transaction: false
     grouplist:
       default: 127.0.0.1:8091
   transport:
     shutdown:
       wait: 3
     thread-factory:
+      boss-thread-prefix: NettyBoss
+      worker-thread-prefix: NettyServerNIOWorker
       server-executor-thread-prefix: NettyServerBizHandler
       client-selector-thread-prefix: NettyClientSelector
+      share-boss-worker: false
       client-selector-thread-size: 1
       client-worker-thread-prefix: NettyClientWorkerThread
     type: TCP
@@ -48,10 +52,15 @@ seata:
     compressor: none
     enable-client-batch-send-request: true
   registry:
-    file:
-      name: file.conf
-    type: file
+    type: nacos
+    nacos:
+      server-addr: ${nacos.server-addr}:${nacos.port}
+      namespace: ${nacos.namespace}
+      cluster: default
   config:
     file:
       name: file.conf
     type: file
+    nacos:
+      namespace: ${nacos.namespace}
+      server-addr: ${nacos.server-addr}:${nacos.port}
