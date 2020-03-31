@@ -42,10 +42,9 @@ public class ServiceTest {
     @Test
     public void testAddItem() {
         TItem item = new TItem();
-        item.setItemName("物品1");
+        item.setItemName("物品2");
         item.setStatus(true);
         boolean realUpdate = itemServer.addItem(item);
         Assert.isTrue(realUpdate, "添加条目失败");
-        System.out.println(item.getItemId());
     }
 }

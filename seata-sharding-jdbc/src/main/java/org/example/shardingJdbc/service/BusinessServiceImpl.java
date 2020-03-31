@@ -9,14 +9,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class BusinessServiceImpl implements BusinessService {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    private final UserPackageService userPackageService;
 
     @Autowired
-    private UserPackageService userPackageService;
+    public BusinessServiceImpl(UserPackageService userPackageService, UserService userService) {
+        this.userPackageService = userPackageService;
+        this.userService = userService;
+    }
 
     @Override
-    @GlobalTransactional
+    @GlobalTransactional(timeoutMills = 300000, name = "shardingJdbc-gts-seata-example", rollbackFor = Exception.class)
     public boolean addUserPackage(TUser user, TUserPackage userPackage) {
         user.setUId(null);
         boolean addUser = userService.addUserRecord(user);
