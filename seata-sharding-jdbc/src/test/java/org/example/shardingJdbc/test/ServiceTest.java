@@ -54,7 +54,7 @@ public class ServiceTest {
         TUser user = new TUser();
         user.setUId(null);
         user.setStatus(true);
-        user.setAccount("aabbcc");
+        user.setAccount("aabbcc1");
         user.setPassword("123456");
         user.setNickName("用户X");
         TUserPackage userPackage = new TUserPackage();

@@ -5,6 +5,7 @@ import org.example.shardingJdbc.entity.TUser;
 import org.example.shardingJdbc.entity.TUserPackage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class BusinessServiceImpl implements BusinessService {
@@ -20,11 +21,13 @@ public class BusinessServiceImpl implements BusinessService {
     }
 
     @Override
-    @GlobalTransactional(timeoutMills = 300000, name = "shardingJdbc-gts-seata-example", rollbackFor = Exception.class)
+    @Transactional
+    @GlobalTransactional(timeoutMills = 300000, name = "shardingJdbc-gts-seata-example")
     public boolean addUserPackage(TUser user, TUserPackage userPackage) {
         boolean addUser = userService.addUserRecord(user);
         userPackage.setUId(user.getUId());
         boolean addPackage = userPackageService.addPackageItem(userPackage);
+        addUser = false;
         if (addUser && addPackage) return true;
         throw new IllegalArgumentException("数据库修改失败!");
     }

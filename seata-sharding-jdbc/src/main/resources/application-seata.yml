@@ -26,7 +26,8 @@ seata:
       exceptionRate: 100
     support:
       spring:
-        datasource-autoproxy: true
+        # TODO:shardingJdbc会代理数据源
+        datasource-autoproxy: false
   service:
     vgroup-mapping:
       sharding-jdbc-service-group: default
