@@ -22,7 +22,6 @@ public class BusinessServiceImpl implements BusinessService {
     @Override
     @GlobalTransactional(timeoutMills = 300000, name = "shardingJdbc-gts-seata-example", rollbackFor = Exception.class)
     public boolean addUserPackage(TUser user, TUserPackage userPackage) {
-        user.setUId(null);
         boolean addUser = userService.addUserRecord(user);
         userPackage.setUId(user.getUId());
         boolean addPackage = userPackageService.addPackageItem(userPackage);
