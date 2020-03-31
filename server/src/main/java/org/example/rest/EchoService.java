@@ -1,11 +1,11 @@
 package org.example.rest;
 
-import org.example.rest.fallback.EchoServiceFallbackFactory;
+import org.example.rest.fallback.EchoServiceFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(value = "server-2", fallbackFactory = EchoServiceFallbackFactory.class)
+@FeignClient(value = "server-2", fallback = EchoServiceFallback.class)
 public interface EchoService {
 
     @GetMapping("/echo/{str}")

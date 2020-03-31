@@ -17,3 +17,4 @@
 /spring-cloud-gateway/spring-cloud-gateway.iml
 /seata-sharding-jdbc/seata-sharding-jdbc.iml
 /seata-sharding-jdbc/target/
+/server/target/

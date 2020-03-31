@@ -42,3 +42,6 @@ dubbo:
     parameters:
       namespace: ${nacos.namespace}
     address: nacos://${nacos.server-addr}:${nacos.port}
+  provider:
+    # hash一致策略 (hash环)
+    loadbalance: consistenthash

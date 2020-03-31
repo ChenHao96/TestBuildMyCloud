@@ -25,7 +25,6 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <mysql.version>5.1.37</mysql.version>
         <reversion>0.0.3</reversion>
     </properties>
 
