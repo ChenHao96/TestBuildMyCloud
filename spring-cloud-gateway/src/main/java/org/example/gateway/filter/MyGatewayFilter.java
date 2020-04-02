@@ -23,7 +23,7 @@ public class MyGatewayFilter implements GlobalFilter, Ordered {
     private static final String X_CLIENT_TOKEN = "x-client-token";
     private static final String IGNORE_AUTH_METHOD = "post";
 
-    @Value("${ignore.auth.url.regex}")
+    @Value("${ignore.auth.url.regex:\\\\w*/login}")
     private String ignoreAuthUrlRegex;
 
     @Override

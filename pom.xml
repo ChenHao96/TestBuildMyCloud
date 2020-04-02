@@ -21,12 +21,11 @@
 
     <groupId>org.example</groupId>
     <artifactId>TestBuildMyCloud</artifactId>
-    <version>${reversion}</version>
+    <version>0.0.3</version>
     <packaging>pom</packaging>
 
     <properties>
         <java.version>1.8</java.version>
-        <reversion>0.0.3</reversion>
     </properties>
 
     <dependencyManagement>
@@ -34,7 +33,7 @@
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>dependencies</artifactId>
-                <version>${reversion}</version>
+                <version>0.0.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

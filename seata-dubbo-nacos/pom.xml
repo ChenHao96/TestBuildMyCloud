@@ -5,8 +5,7 @@
     <parent>
         <artifactId>TestBuildMyCloud</artifactId>
         <groupId>org.example</groupId>
-        <version>${reversion}</version>
-        <relativePath>../pom.xml</relativePath>
+        <version>0.0.3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -32,4 +31,14 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>business-provider-api</artifactId>
+                <version>0.0.3</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

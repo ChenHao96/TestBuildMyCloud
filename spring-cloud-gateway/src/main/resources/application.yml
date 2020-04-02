@@ -1,12 +1,6 @@
 server:
   port: 8080
 
-ignore:
-  auth:
-    url:
-      regex: \\w*
-#      regex: \\w*/login
-
 spring:
   application:
     name: nacos-discovery-gateway
@@ -27,3 +21,14 @@ spring:
     sentinel:
       transport:
         dashboard: localhost:8888
+      datasource:
+#        ds1:
+#          file:
+#            file: classpath:gateway-sentinel.json
+#            ruleType: flow
+        ds2:
+          nacos:
+            serverAddr: localhost:8848
+            dataId: gateway-sentinel.json
+            namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
+            ruleType: flow
