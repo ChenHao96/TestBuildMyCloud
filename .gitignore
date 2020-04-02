@@ -19,3 +19,5 @@
 /seata-sharding-jdbc/target/
 /server/target/
 /commons/commons.iml
+/spring-cloud-gateway/target/classes/
+/commons/target/classes/org/example/commons/
