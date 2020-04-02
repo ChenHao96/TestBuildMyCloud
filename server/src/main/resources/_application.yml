@@ -10,6 +10,8 @@ spring:
       discovery:
         server-addr: localhost:8848
         namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
+        metadata:
+          name: aabbcc
 
 management:
   endpoints:

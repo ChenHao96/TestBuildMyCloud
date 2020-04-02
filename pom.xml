@@ -16,6 +16,7 @@
         <module>seata-dubbo-nacos</module>
         <module>spring-cloud-gateway</module>
         <module>seata-sharding-jdbc</module>
+        <module>commons</module>
     </modules>
 
     <groupId>org.example</groupId>
