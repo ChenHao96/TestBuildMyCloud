@@ -26,7 +26,7 @@ public class PurchaseServiceImpl implements PurchaseService {
     private AccountService accountService;
 
     @Override
-    @GlobalTransactional(timeoutMills = 300000, name = "dubbo-gts-seata-example")
+    @GlobalTransactional(timeoutMills = 3000, name = "dubbo-gts-seata-example")
     public ServiceResult<String> purchase(String userId, String commodityCode, int orderCount) {
         ServiceResult<String> serviceResult = new ServiceResult<>(false, "购买商品失败!");
         boolean deduct = storageService.deduct(commodityCode, orderCount);

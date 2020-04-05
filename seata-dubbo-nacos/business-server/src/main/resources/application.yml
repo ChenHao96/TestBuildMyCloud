@@ -9,27 +9,27 @@ logging:
 provider:
   service:
     version:
-      order: 0.0.1
       storage: 0.0.1
       account: 0.0.1
+      order: 0.0.1
 
-nacos:
-  server-addr: localhost
-  port: 8848
-  namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
+config:
+  server-addr:
+    sentinel: localhost
+    nacos: localhost
+  port:
+    sentinel: 8888
+    nacos: 8848
+  namespace:
+    nacos: dc2615b9-2358-4cd8-baa7-ba152891a673
 
 spring:
   profiles:
-    active: seata
+    active: seata,cloud
   application:
     name: business-service
   main:
     allow-bean-definition-overriding: true
-  cloud:
-    nacos:
-      discovery:
-        server-addr: ${nacos.server-addr}:${nacos.port}
-        namespace: ${nacos.namespace}
 
 dubbo:
   protocol:
@@ -37,8 +37,8 @@ dubbo:
     serialization: kryo
   registry:
     parameters:
-      namespace: ${nacos.namespace}
-    address: nacos://${nacos.server-addr}:${nacos.port}
+      namespace: ${config.namespace.nacos}
+    address: nacos://${config.server-addr.nacos}:${config.port.nacos}
 
 management:
   health:

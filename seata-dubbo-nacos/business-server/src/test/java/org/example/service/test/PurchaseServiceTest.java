@@ -1,7 +1,7 @@
 package org.example.service.test;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.model.ServiceResult;
+import org.example.commons.model.ServiceResult;
 import org.example.service.PurchaseService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

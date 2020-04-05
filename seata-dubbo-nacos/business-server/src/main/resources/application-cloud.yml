@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${config.server-addr.nacos:localhost}:${config.port.nacos:8848}
+        namespace: ${config.namespace.nacos:public}
+    sentinel:
+      transport:
+        dashboard: ${config.server-addr.sentinel:localhost}:${config.port.sentinel:8888}
+      filter:
+        url-patterns: /*

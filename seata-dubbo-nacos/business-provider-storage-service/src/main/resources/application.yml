@@ -8,10 +8,10 @@ logging:
     io:
       seata: debug
 
-#csp:
-#  sentinel:
-#    dashboard:
-#      server: localhost:8888
+csp:
+  sentinel:
+    dashboard:
+      server: localhost:8888
 
 nacos:
   server-addr: localhost
