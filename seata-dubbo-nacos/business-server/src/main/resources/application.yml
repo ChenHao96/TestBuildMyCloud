@@ -45,8 +45,8 @@ dubbo:
     serialization: kryo
   registry:
     parameters:
-      namespace: ${config.namespace.nacos}
-    address: nacos://${config.server-addr.nacos}:${config.port.nacos}
+      namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
+    address: nacos://localhost:8848
 
 management:
   health:

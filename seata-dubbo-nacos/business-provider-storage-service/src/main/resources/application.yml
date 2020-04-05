@@ -8,10 +8,10 @@ logging:
     io:
       seata: debug
 
-csp:
-  sentinel:
-    dashboard:
-      server: localhost:8888
+#csp:
+#  sentinel:
+#    dashboard:
+#      server: localhost:8888
 
 nacos:
   server-addr: localhost
@@ -51,8 +51,8 @@ dubbo:
     serialization: kryo
   registry:
     parameters:
-      namespace: ${nacos.namespace}
-    address: nacos://${nacos.server-addr}:${nacos.port}
+      namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
+    address: nacos://localhost:8848
   provider:
     # hash一致策略 (hash环)
     loadbalance: consistenthash

@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.Date;
 
 @Data
 @Accessors(chain = true)
@@ -18,15 +17,15 @@ public class Order implements Serializable {
     /**
      * since: 0.0.1
      */
-    private int orderCount;
+    private Integer orderCount;
 
     /**
      * since: 0.0.1
      */
-    private int totalMoney;
+    private Integer totalMoney;
 
     /**
      * since: 0.0.1
      */
-    private Date createTime;
+    private Long createTime;
 }

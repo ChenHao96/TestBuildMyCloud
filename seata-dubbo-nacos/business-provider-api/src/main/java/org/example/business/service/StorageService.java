@@ -10,10 +10,10 @@ public interface StorageService {
     /**
      * 扣除存储数量
      */
-    boolean deduct(String commodityCode, int count);
+    Boolean deduct(String commodityCode, Integer count);
 
     /**
      * 查询商品价格
      */
-    int queryCommodityMoney(String commodityCode);
+    Integer queryCommodityMoney(String commodityCode);
 }

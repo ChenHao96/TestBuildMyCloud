@@ -10,5 +10,5 @@ public interface AccountService {
     /**
      * 从用户账户中借出
      */
-    boolean debit(String userId, int money);
+    Boolean debit(String userId, Integer money);
 }
