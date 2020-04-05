@@ -23,9 +23,17 @@ config:
   namespace:
     nacos: dc2615b9-2358-4cd8-baa7-ba152891a673
 
+seata:
+  tx-service-group: business-service-group
+  service:
+    vgroup-mapping:
+      business-service-group: default
+  transport:
+    serialization: kryo
+
 spring:
   profiles:
-    active: seata,cloud
+    active: cloud
   application:
     name: business-service
   main:

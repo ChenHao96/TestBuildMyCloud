@@ -18,6 +18,14 @@ nacos:
   port: 8848
   namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
 
+seata:
+  tx-service-group: storage-service-group
+  service:
+    vgroup-mapping:
+      storage-service-group: default
+  transport:
+    serialization: kryo
+
 spring:
   profiles:
     active: seata

@@ -17,7 +17,8 @@ public class StorageServiceImpl implements StorageService {
     @Override
     public boolean deduct(String commodityCode, int count) {
         if (StringUtils.isEmpty(commodityCode) || count < 1) return false;
-        return storageAdaptor.updateCommodityBalance(commodityCode, count) == 1;
+        int resultCount = storageAdaptor.updateCommodityBalance(commodityCode, count);
+        return resultCount == 1;
     }
 
     @Override
