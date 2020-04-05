@@ -5,7 +5,7 @@
     <parent>
         <artifactId>TestBuildMyCloud</artifactId>
         <groupId>org.example</groupId>
-        <version>0.0.3</version>
+        <version>0.0.4</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -37,7 +37,7 @@
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>business-provider-api</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

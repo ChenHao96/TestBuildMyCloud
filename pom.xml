@@ -21,7 +21,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>TestBuildMyCloud</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -33,7 +33,7 @@
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>dependencies</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
