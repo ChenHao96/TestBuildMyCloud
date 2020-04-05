@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: nacos-discovery-gateway
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    gateway:
+      enabled: true
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          filters:
+            - StripPrefix=1
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
+    sentinel:
+      transport:
+        dashboard: localhost:8888
+      filter:
+        url-patterns: /*
+      datasource:
+#        ds1:
+#          file:
+#            file: classpath:gateway-sentinel.json
+#            ruleType: flow
+        ds2:
+          nacos:
+            serverAddr: localhost:8848
+            dataId: gateway-sentinel.json
+            namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
+            ruleType: flow

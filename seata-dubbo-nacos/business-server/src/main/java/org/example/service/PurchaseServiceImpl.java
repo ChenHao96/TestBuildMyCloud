@@ -9,7 +9,7 @@ import org.example.business.model.Order;
 import org.example.business.service.AccountService;
 import org.example.business.service.OrderService;
 import org.example.business.service.StorageService;
-import org.example.model.ServiceResult;
+import org.example.commons.model.ServiceResult;
 import org.springframework.stereotype.Service;
 
 @Slf4j

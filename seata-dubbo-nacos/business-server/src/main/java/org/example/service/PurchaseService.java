@@ -1,6 +1,6 @@
 package org.example.service;
 
-import org.example.model.ServiceResult;
+import org.example.commons.model.ServiceResult;
 
 public interface PurchaseService {
 

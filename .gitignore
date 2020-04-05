@@ -14,3 +14,10 @@
 /seata-dubbo-nacos/business-provider-account-service/target/
 /seata-dubbo-nacos/business-provider-storage-service/target/
 /seata-dubbo-nacos/business-provider-api/target/
+/spring-cloud-gateway/spring-cloud-gateway.iml
+/seata-sharding-jdbc/seata-sharding-jdbc.iml
+/seata-sharding-jdbc/target/
+/server/target/
+/commons/commons.iml
+/spring-cloud-gateway/target/classes/
+/commons/target/classes/org/example/commons/

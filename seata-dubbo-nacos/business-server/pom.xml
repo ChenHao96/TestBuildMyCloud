@@ -5,8 +5,7 @@
     <parent>
         <artifactId>seata-dubbo-nacos</artifactId>
         <groupId>org.example</groupId>
-        <version>${reversion}</version>
-        <relativePath>../pom.xml</relativePath>
+        <version>0.0.3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -53,7 +52,12 @@
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>business-provider-api</artifactId>
-            <version>${reversion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>commons</artifactId>
+            <version>0.0.3</version>
         </dependency>
     </dependencies>
 

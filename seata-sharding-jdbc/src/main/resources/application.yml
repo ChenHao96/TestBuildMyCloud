@@ -1,0 +1,16 @@
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+
+nacos:
+  server-addr: localhost
+  port: 8848
+  namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
+
+spring:
+  profiles:
+    active: shardingJdbc,seata
+  application:
+    name: sharding-jdbc-service-application
+  main:
+    allow-bean-definition-overriding: true

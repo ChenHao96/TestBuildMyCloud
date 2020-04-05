@@ -6,20 +6,27 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <version>1.0.1-SNAPSHOT</version>
     <artifactId>dependencies</artifactId>
+    <version>0.0.3</version>
     <packaging>pom</packaging>
 
     <properties>
         <dubbo.version>2.7.5</dubbo.version>
         <dubbo.kryo.version>2.6.8</dubbo.kryo.version>
         <dubbo.registry-nacos.version>2.6.8</dubbo.registry-nacos.version>
-
+        <asm.version>5.0.4</asm.version>
+        <hdrHistogram.version>2.1.11</hdrHistogram.version>
+        <objenesis.version>2.6</objenesis.version>
+        <fastjson.version>1.2.60</fastjson.version>
         <druid.version>1.1.21</druid.version>
-        <mybatis.version>2.1.1</mybatis.version>
+        <mybatis.version>2.1.2</mybatis.version>
         <redisson.version>3.12.1</redisson.version>
-        <mybatis-plus.version>3.2.0</mybatis-plus.version>
-
+        <mybatis-plus.version>3.3.1</mybatis-plus.version>
+        <jsr305.version>3.0.2</jsr305.version>
+        <nacos.version>1.1.4</nacos.version>
+        <seata.version>1.1.0</seata.version>
+        <!-- version > 4.0.0-RC1: TODO:Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required-->
+        <sharding.jdbc.version>4.0.0-RC1</sharding.jdbc.version>
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
     </properties>
@@ -79,9 +86,47 @@
             </dependency>
 
             <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>${jsr305.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.objenesis</groupId>
+                <artifactId>objenesis</artifactId>
+                <version>${objenesis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hdrhistogram</groupId>
+                <artifactId>HdrHistogram</artifactId>
+                <version>${hdrHistogram.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ow2.asm</groupId>
+                <artifactId>asm</artifactId>
+                <version>${asm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-api</artifactId>
+                <version>${nacos.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>io.seata</groupId>
                 <artifactId>seata-all</artifactId>
-                <version>1.1.0</version>
+                <version>${seata.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba</groupId>
+                        <artifactId>druid</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -111,6 +156,12 @@
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${sharding.jdbc.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
