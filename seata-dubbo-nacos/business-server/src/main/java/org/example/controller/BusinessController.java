@@ -14,7 +14,7 @@ public class BusinessController {
     private PurchaseService purchaseService;
 
     @PostMapping("/purchase")
-    public HttpResult<String> purchase(String userId, String commodityCode, int orderCount) {
+    public HttpResult<String> purchase(String userId, String commodityCode, Integer orderCount) {
         ServiceResult<String> serviceResult = purchaseService.purchase(userId, commodityCode, orderCount);
         if (serviceResult != null && serviceResult.isSuccess()) {
             return new HttpResult<>(200, "SUCCESS", serviceResult.getData());

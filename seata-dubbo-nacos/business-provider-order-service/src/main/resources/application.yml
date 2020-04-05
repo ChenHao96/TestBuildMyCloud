@@ -36,7 +36,6 @@ spring:
     username: service_order
     password: 123456
 
-
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true

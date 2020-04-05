@@ -8,11 +8,6 @@ logging:
     io:
       seata: debug
 
-#csp:
-#  sentinel:
-#    dashboard:
-#      server: localhost:8888
-
 nacos:
   server-addr: localhost
   port: 8848

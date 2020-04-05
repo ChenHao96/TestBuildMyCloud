@@ -27,7 +27,7 @@ public class PurchaseServiceImpl implements PurchaseService {
 
     @Override
     @GlobalTransactional(timeoutMills = 3000, name = "dubbo-gts-seata-example")
-    public ServiceResult<String> purchase(String userId, String commodityCode, int orderCount) {
+    public ServiceResult<String> purchase(String userId, String commodityCode, Integer orderCount) {
 
         boolean oneSuccess = false;
         ServiceResult<String> serviceResult = new ServiceResult<>(false, "商品库存不足!");
