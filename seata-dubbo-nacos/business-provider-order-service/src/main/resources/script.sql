@@ -12,12 +12,20 @@ CREATE TABLE IF NOT EXISTS `undo_log`(
     UNIQUE KEY `ux_undo_log` (`xid`, `branch_id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8 COMMENT ='AT transaction mode undo table';
 
-DROP TABLE IF EXISTS `order_tbl`;
-CREATE TABLE `order_tbl` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `order_tbl_0`;
+CREATE TABLE `order_tbl_0` (
+  `id` bigint(20) NOT NULL PRIMARY KEY,
   `user_id` varchar(255) DEFAULT NULL,
   `commodity_code` varchar(255) DEFAULT NULL,
-  `count` int(11) DEFAULT 0,
-  `money` int(11) DEFAULT 0,
-  PRIMARY KEY (`id`)
+  `count` int(10) unsigned NOT NULL DEFAULT '0',
+  `money` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `order_tbl_1`;
+CREATE TABLE `order_tbl_1` (
+  `id` bigint(20) NOT NULL PRIMARY KEY,
+  `user_id` varchar(255) DEFAULT NULL,
+  `commodity_code` varchar(255) DEFAULT NULL,
+  `count` int(10) unsigned NOT NULL DEFAULT '0',
+  `money` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

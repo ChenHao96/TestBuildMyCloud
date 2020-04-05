@@ -14,8 +14,7 @@ CREATE TABLE IF NOT EXISTS `undo_log`(
 
 DROP TABLE IF EXISTS `account_tbl`;
 CREATE TABLE `account_tbl` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` varchar(255) DEFAULT NULL,
-  `money` int(11) DEFAULT 0,
-  PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL PRIMARY KEY,
+  `user_id` varchar(255) NOT NULL,
+  `money` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

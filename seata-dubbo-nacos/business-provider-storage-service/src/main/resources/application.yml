@@ -22,8 +22,6 @@ seata:
     serialization: kryo
 
 spring:
-  profiles:
-    active: seata
   application:
     name: dubbo-service-application-storageService
   main:
@@ -49,5 +47,4 @@ dubbo:
       namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
     address: nacos://localhost:8848
   provider:
-    # hash一致策略 (hash环)
     loadbalance: consistenthash

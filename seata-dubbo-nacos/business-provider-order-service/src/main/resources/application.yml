@@ -21,20 +21,22 @@ seata:
       order-service-group: default
   transport:
     serialization: kryo
+  # TODO:shardingJdbc会代理数据源
+  enable-auto-data-source-proxy: false
 
 spring:
   profiles:
-    active: seata
+    active: shardingJdbc
   application:
     name: dubbo-service-application-orderService
   main:
     allow-bean-definition-overriding: true
-  datasource:
-    platform: mysql
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/orders
-    username: service_order
-    password: 123456
+#  datasource:
+#    platform: mysql
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/orders
+#    username: service_order
+#    password: 123456
 
 mybatis-plus:
   configuration:
@@ -50,5 +52,4 @@ dubbo:
       namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
     address: nacos://localhost:8848
   provider:
-    # hash一致策略 (hash环)
     loadbalance: consistenthash
