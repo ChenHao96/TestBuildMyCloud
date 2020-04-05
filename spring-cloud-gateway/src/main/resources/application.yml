@@ -8,9 +8,9 @@ spring:
     allow-bean-definition-overriding: true
   cloud:
     gateway:
+      enabled: true
       discovery:
         locator:
-          enabled: true
           lowerCaseServiceId: true
           filters:
             - StripPrefix=1
@@ -21,6 +21,8 @@ spring:
     sentinel:
       transport:
         dashboard: localhost:8888
+      filter:
+        url-patterns: /*
       datasource:
 #        ds1:
 #          file:
