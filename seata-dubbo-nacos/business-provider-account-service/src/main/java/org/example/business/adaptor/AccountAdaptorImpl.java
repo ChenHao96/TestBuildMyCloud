@@ -3,14 +3,15 @@ package org.example.business.adaptor;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.example.business.dao.AccountMapper;
 import org.example.business.model.Account;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
+
+import javax.annotation.Resource;
 
 @Repository
 public class AccountAdaptorImpl implements AccountAdaptor {
 
-    @Autowired
+    @Resource
     private AccountMapper accountMapper;
 
     @Override

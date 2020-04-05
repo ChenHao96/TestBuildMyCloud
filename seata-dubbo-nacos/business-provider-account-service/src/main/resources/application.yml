@@ -31,11 +31,6 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
 
-csp:
-  sentinel:
-    dashboard:
-      server: localhost:8888
-
 dubbo:
   protocol:
     name: dubbo

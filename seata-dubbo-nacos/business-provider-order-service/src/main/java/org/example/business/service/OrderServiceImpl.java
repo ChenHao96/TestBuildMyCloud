@@ -5,10 +5,10 @@ import org.apache.dubbo.config.annotation.Service;
 import org.example.business.adaptor.OrderAdaptor;
 import org.example.business.entity.OrderEntity;
 import org.example.business.model.Order;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
 import java.util.Date;
 import java.util.UUID;
 
@@ -16,7 +16,7 @@ import java.util.UUID;
 @Service(version = "${service.dubbo.version.order}")
 public class OrderServiceImpl implements OrderService {
 
-    @Resource
+    @Autowired
     private OrderAdaptor orderAdaptor;
 
     @Reference(version = "${service.dubbo.version.storage}", check = false)

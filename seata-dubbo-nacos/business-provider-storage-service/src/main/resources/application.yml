@@ -8,11 +8,15 @@ logging:
     io:
       seata: debug
 
+#csp:
+#  sentinel:
+#    dashboard:
+#      server: localhost:8888
+
 nacos:
   server-addr: localhost
   port: 8848
   namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
-
 
 spring:
   profiles:

@@ -2,13 +2,14 @@ package org.example.business.adaptor;
 
 import org.example.business.dao.OrderMapper;
 import org.example.business.entity.OrderEntity;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import javax.annotation.Resource;
 
 @Repository
 public class OrderAdaptorImpl implements OrderAdaptor {
 
-    @Autowired
+    @Resource
     private OrderMapper orderMapper;
 
     @Override

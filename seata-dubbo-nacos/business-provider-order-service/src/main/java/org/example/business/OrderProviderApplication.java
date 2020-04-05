@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class OrderProviderApplication {
 
     /**
-     * vm-option: -server -Xms768m -Xmx768m -XX:PermSize=128m
+     * vm-option: -server -Xms768m -Xmx768m
      */
     public static void main(String[] args) {
         SpringApplication.run(OrderProviderApplication.class, args);
