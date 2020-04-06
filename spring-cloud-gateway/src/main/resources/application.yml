@@ -19,10 +19,11 @@ spring:
         server-addr: localhost:8848
         namespace: dc2615b9-2358-4cd8-baa7-ba152891a673
     sentinel:
-      transport:
-        dashboard: localhost:8888
+#      transport:
+#        dashboard: localhost:8888
       filter:
-        url-patterns: /*
+        enabled: false
+#        url-patterns: /*
       datasource:
 #        ds1:
 #          file:
