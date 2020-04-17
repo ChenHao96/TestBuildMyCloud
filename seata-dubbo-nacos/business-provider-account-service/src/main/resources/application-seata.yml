@@ -1,0 +1,20 @@
+logging:
+  level:
+    io:
+      seata: debug
+
+seata:
+  tx-service-group: account-service-group
+  service:
+    vgroup-mapping:
+      account-service-group: default
+    grouplist:
+      default: 10.10.30.5:8091
+  transport:
+    serialization: kryo
+  registry:
+    nacos:
+      serverAddr: ${nacos.server-addr}
+      namespace: ${nacos.namespace}
+  config:
+    type: file
